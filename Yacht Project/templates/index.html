@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yacht Insurance Data Extraction</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+        .dataframe {
+            width: 100% !important;
+        }
+        th, td {
+            text-align: center !important;
+            vertical-align: middle !important;
+            white-space: normal !important;
+        }
+        thead th {
+            background-color: #40466e !important;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Yacht Insurance Data Extraction</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="pdf_files">Upload PDF Files:</label>
+                <input type="file" class="form-control-file" id="pdf_files" name="pdf_files" multiple accept=".pdf" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Extract Data</button>
+        </form>
+        <br>
+        {% if tables %}
+            <h2 class="text-center">Extracted Data</h2>
+            {% for table in tables %}
+                <div class="table-responsive">
+                    {{ table|safe }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- DataTables JS -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <!-- DataTables Initialization -->
+    <script>
+      $(document).ready(function() {
+          $('table').DataTable({
+              "paging": false,
+              "searching": false,
+              "info": true,
+              "ordering": true,
+              "scrollX": true
+          });
+      });
+    </script>
+</body>
+</html>
