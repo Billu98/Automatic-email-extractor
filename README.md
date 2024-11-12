@@ -51,18 +51,29 @@ Bootstrap: For styling the front-end.
 DataTables: jQuery plugin to add sorting, searching, and pagination to HTML tables.
 
 ## Folder Structure
+
 YachtInsuranceInquiry/
+
 ├── extracted_data/              # Folder to store extracted data (if applicable)
+
 ├── static/                      # Folder for static files (CSS, JS)
+
 ├── templates/                   # Folder for HTML templates (Jinja2)
+
 ├── uploads/                     # Folder where uploaded PDFs are temporarily stored
+
 ├── email1.pdf                   # Sample email files for testing
+
 ├── email2.pdf
+
 ├── email3.pdf
+
 ├── Executive Summary.pdf        # Project executive summary
+
 ├── main.py                      # Main Flask application file
-├── ppt.pptx                     # Project presentation file (optional)
+
 ├── requirements.txt             # List of required packages
+
 └── README.md                    # Project documentation (this file)
 
 ## Installation
